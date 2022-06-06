@@ -61,7 +61,7 @@ if __name__ == "__main__":
         X_test = Xs[fold]
         y_test = ys[fold]
 
-        clf = LinearSVC().fit(X_train, y_train)
+        clf = LinearSVC(class_weight='balanced').fit(X_train, y_train)
         clf.fit(X_train, y_train)
 
         predicted = [LABELS[int(a)] for a in clf.predict(X_test)]
