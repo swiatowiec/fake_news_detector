@@ -4,6 +4,9 @@ import nltk
 import numpy as np
 from sklearn import feature_extraction
 from tqdm import tqdm
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 
 _wnl = nltk.WordNetLemmatizer()
