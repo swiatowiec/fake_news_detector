@@ -1,1 +1,5 @@
 *data
+.vscode
+*.pyc
+*.npy
+*.txt
