@@ -1,8 +1,8 @@
 import numpy as np
-from sklearn.ensemble import GradientBoostingClassifier
 from feature_engineering import refuting_features, polarity_features, hand_features, gen_or_load_feats
 from feature_engineering import word_overlap_features
 from utils.dataset import DataSet
+from sklearn.svm import LinearSVC
 from utils.generate_test_splits import kfold_split, get_stances_for_folds
 from utils.score import report_score, LABELS, score_submission
 from utils.system import parse_params, check_version
@@ -61,7 +61,7 @@ if __name__ == "__main__":
         X_test = Xs[fold]
         y_test = ys[fold]
 
-        clf = GradientBoostingClassifier(n_estimators=200, random_state=14128, verbose=True)
+        clf = LinearSVC().fit(X_train, y_train)
         clf.fit(X_train, y_train)
 
         predicted = [LABELS[int(a)] for a in clf.predict(X_test)]
