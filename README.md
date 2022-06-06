@@ -15,6 +15,7 @@ use req.txt file to install required packages.
 
 ## HOW TO IMPROVE
 apply LSTM as linear SVC perform poorly
+apply transformers (Bert, Roberta, ...) with Pytorch
 the data are unbalanced, svc model needs some weights and hyperparameters tuning
 apply model monitoring tool
 refactor code (as one method should do one thing)
